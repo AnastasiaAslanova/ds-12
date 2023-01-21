@@ -1,0 +1,204 @@
+.container h3 {
+  margin-bottom: 80px;
+  text-align: center;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 45px;
+  letter-spacing: 0.05em;
+  color: #000000;
+}
+.architectural .gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3,370px);
+  grid-template-areas:
+    "pic1 pic2 pic2"
+    "pic3 pic3 pic4"
+    "pic5 pic6 pic6";
+  max-width: 1170px;
+  width: 100%;
+  margin: 0 auto;
+  grid-gap: 30px;
+}
+
+.still-life .gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 370px 770px 370px;
+  grid-template-areas:
+    "pic1 pic2 pic2"
+    "pic3 pic3 pic4"
+    "pic5 pic5 pic6";
+  max-width: 1170px;
+  width: 100%;
+  margin: 0 auto;
+  grid-gap: 30px;
+}
+
+.portrait-and-fashion .gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-areas:
+    "pic1 pic3 pic4"
+    "pic2 pic3 pic7"
+    "pic5 pic6 pic7"
+    "pic5 pic8 pic8"
+    "pic9 pic9 pic10";
+  max-width: 1170px;
+  width: 100%;
+  margin: 0 auto;
+  grid-gap: 30px;
+}
+.gallery img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 20px;
+}
+
+.gallery__item--pic1 {
+  grid-area: pic1;
+}
+
+.gallery__item--pic2 {
+  grid-area: pic2;
+}
+
+.gallery__item--pic3 {
+  grid-area: pic3;
+}
+
+.gallery__item--pic4 {
+  grid-area: pic4;
+}
+
+.gallery__item--pic5 {
+  grid-area: pic5;
+}
+
+.gallery__item--pic6 {
+  grid-area: pic6;
+}
+.gallery__item--pic7 {
+  grid-area: pic7;
+}
+.gallery__item--pic8 {
+  grid-area: pic8;
+}
+.gallery__item--pic9 {
+  grid-area: pic9;
+}
+.gallery__item--pic10 {
+  grid-area: pic10;
+}
+
+.gallery {
+  margin-bottom: 100px;
+}
+
+.gallery__item {
+  position: relative;
+  cursor: url(../images/svg/hand-point-up.svg), auto;
+}
+
+.gallery__item::after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0, #241F24 0%, rgba(91, 91, 91, 0.447552) 34.11%, rgba(187, 186, 192, 0.26) 62.5%);
+  border-radius: 20px;
+  transition: .3s all;
+}
+
+.gallery__details {
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  padding: 20px;
+}
+
+.gallery__item:hover::after {
+  opacity: 0;
+}
+.gallery__svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 270px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  opacity: 0;
+  transition: .4s all;
+}
+.gallery__svg ul {
+  display: flex;
+  justify-content: center;
+}
+
+.gallery__svg--like, .gallery__svg--download {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(224, 224, 224, 0.5);
+  border-radius: 8px;
+  transition: .2s all;
+  z-index: 2;
+  cursor: url(../images/svg/hand-point-up.svg), auto;
+  position: absolute;
+  top: 20px;
+}
+
+.gallery__svg--download {
+  right: 20px;
+}
+.gallery__svg--like {
+  left: 20px;
+}
+
+.gallery__svg svg {
+  width: 20px;
+}
+
+.gallery__svg path {
+  fill: #4F4F4F;
+  transition: .2s all;
+}
+
+.gallery__svg--like:hover, .gallery__svg--download:hover{
+  background: rgba(224, 224, 224, 1);
+  border-radius: 8px;
+}
+
+.gallery__item:hover .gallery__svg--like,
+.gallery__item:hover .gallery__svg--download
+{
+  opacity: 1;
+  z-index: 3;
+}
+
+.gallery__item .gallery__svg--like,
+.gallery__item .gallery__svg--download{
+  opacity: 0;
+
+}
+.gallery__item .gallery__svg--like a,
+.gallery__item .gallery__svg--download a{
+  cursor: url(../images/svg/hand-point-up.svg), auto;
+}
+
